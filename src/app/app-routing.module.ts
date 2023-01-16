@@ -14,16 +14,27 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
-},
+    pathMatch: 'full',
+  },
   { path: 'login', component: LoginpageComponent },
-  { path: 'publisher-rule', component: PublisherRuleComponent },
-  { path: 'feed-manager', component: FeedManagerComponent },
-  { path: 'referrer-manager', component: ReferrerManagerComponent },
-  { path: 'abc', component: ISPManagerComponent },
-  { path: 'country-manager', component: CountryManagerComponent },
-  { path: 'domain-manager', component: DomainManagerComponent },
-  { path: 'dashboard', component: DashboardComponent  }
+
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'publisher-rule',
+        pathMatch: 'full',
+      },
+      { path: 'publisher-rule', component: PublisherRuleComponent },
+      { path: 'feed-manager', component: FeedManagerComponent },
+      { path: 'referrer-manager', component: ReferrerManagerComponent },
+      { path: 'search-pixel-manager', component: ISPManagerComponent },
+      { path: 'country-manager', component: CountryManagerComponent },
+      { path: 'domain-manager', component: DomainManagerComponent },
+    ],
+  },
 ];
 
 @NgModule({

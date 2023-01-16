@@ -7,40 +7,45 @@
   </div>
   <div class="nav-sec">
     <div>
-      <a routerLink="/publisher-rule" routerLinkActive="active"
+      <a routerLink="/dashboard/publisher-rule" routerLinkActive="active"
         >Publisher Rule</a
       >
       <div class="active-class"></div>
     </div>
     <div>
-      <a routerLink="/feed-manager" [routerLinkActive]="['active']"
+      <a routerLink="/dashboard/feed-manager" [routerLinkActive]="['active']"
         >Feed Manager</a
       >
       <div class="active-class"></div>
     </div>
     <div>
-      <a routerLink="/referrer-manager" [routerLinkActive]="['active']"
+      <a
+        routerLink="/dashboard/referrer-manager"
+        [routerLinkActive]="['active']"
         >Referrer Manager</a
       >
       <div class="active-class"></div>
     </div>
     <div>
-      <a routerLink="/abc" [routerLinkActive]="['active']"
+      <a
+        routerLink="/dashboard/search-pixel-manager"
+        [routerLinkActive]="['active']"
         >Internal Search Pixel Manager</a
       >
       <div class="active-class"></div>
     </div>
     <div>
-      <a routerLink="/country-manager" [routerLinkActive]="['active']"
+      <a routerLink="/dashboard/country-manager" [routerLinkActive]="['active']"
         >Country Manager</a
       >
       <div class="active-class"></div>
     </div>
     <div>
-      <a routerLink="/domain-manager" [routerLinkActive]="['active']"
+      <a routerLink="/dashboard/domain-manager" [routerLinkActive]="['active']"
         >Domain Manager</a
       >
       <div class="active-class"></div>
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
