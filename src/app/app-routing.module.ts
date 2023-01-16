@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { LoginpageComponent } from './Loginpage/loginpage/loginpage.component';
+import { CountryManagerComponent } from './NavSection/country-manager/country-manager.component';
+import { DashboardComponent } from './NavSection/dashboard/dashboard.component';
+import { DomainManagerComponent } from './NavSection/domain-manager/domain-manager.component';
+import { FeedManagerComponent } from './NavSection/feed-manager/feed-manager.component';
+import { ISPManagerComponent } from './NavSection/i-s-p-manager/i-s-p-manager.component';
+import { PublisherRuleComponent } from './NavSection/publisher-rule/publisher-rule.component';
+import { ReferrerManagerComponent } from './NavSection/referrer-manager/referrer-manager.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+},
+  { path: 'login', component: LoginpageComponent },
+  { path: 'publisher-rule', component: PublisherRuleComponent },
+  { path: 'feed-manager', component: FeedManagerComponent },
+  { path: 'referrer-manager', component: ReferrerManagerComponent },
+  { path: 'abc', component: ISPManagerComponent },
+  { path: 'country-manager', component: CountryManagerComponent },
+  { path: 'domain-manager', component: DomainManagerComponent },
+  { path: 'dashboard', component: DashboardComponent  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

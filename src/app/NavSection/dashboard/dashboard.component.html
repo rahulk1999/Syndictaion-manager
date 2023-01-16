@@ -1,0 +1,46 @@
+<div>
+  <div class="head-sec">
+    <div class="logo">
+      <img src="../assets/logo.svg" alt="logo" />
+    </div>
+    <div class="logout" routerLink="/login">Logout</div>
+  </div>
+  <div class="nav-sec">
+    <div>
+      <a routerLink="/publisher-rule" routerLinkActive="active"
+        >Publisher Rule</a
+      >
+      <div class="active-class"></div>
+    </div>
+    <div>
+      <a routerLink="/feed-manager" [routerLinkActive]="['active']"
+        >Feed Manager</a
+      >
+      <div class="active-class"></div>
+    </div>
+    <div>
+      <a routerLink="/referrer-manager" [routerLinkActive]="['active']"
+        >Referrer Manager</a
+      >
+      <div class="active-class"></div>
+    </div>
+    <div>
+      <a routerLink="/abc" [routerLinkActive]="['active']"
+        >Internal Search Pixel Manager</a
+      >
+      <div class="active-class"></div>
+    </div>
+    <div>
+      <a routerLink="/country-manager" [routerLinkActive]="['active']"
+        >Country Manager</a
+      >
+      <div class="active-class"></div>
+    </div>
+    <div>
+      <a routerLink="/domain-manager" [routerLinkActive]="['active']"
+        >Domain Manager</a
+      >
+      <div class="active-class"></div>
+    </div>
+  </div>
+</div>
