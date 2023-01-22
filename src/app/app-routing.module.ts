@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth-guard.service';
 import { LoginpageComponent } from './Loginpage/loginpage/loginpage.component';
 import { CountryManagerComponent } from './NavSection/country-manager/country-manager.component';
 import { DashboardComponent } from './NavSection/dashboard/dashboard.component';
@@ -16,19 +17,21 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  { path: 'login', component: LoginpageComponent },
+  { path: 'login',component: LoginpageComponent },
 
   {
-    path: 'dashboard',
+    path: '',
+    canActivate:[AuthGuard],
     component: DashboardComponent,
     children: [
       {
-        path: '',
+        path: 'dashboard',
+        
         redirectTo: 'publisher-rule',
         pathMatch: 'full',
       },
       { path: 'publisher-rule', component: PublisherRuleComponent },
-      { path: 'feed-manager', component: FeedManagerComponent },
+      { path: 'feed-manager',component: FeedManagerComponent },
       { path: 'referrer-manager', component: ReferrerManagerComponent },
       { path: 'search-pixel-manager', component: ISPManagerComponent },
       { path: 'country-manager', component: CountryManagerComponent },

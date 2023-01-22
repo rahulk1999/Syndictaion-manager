@@ -10,6 +10,9 @@ import { CountryManagerComponent } from './NavSection/country-manager/country-ma
 import { DomainManagerComponent } from './NavSection/domain-manager/domain-manager.component';
 import { LoginpageComponent } from './Loginpage/loginpage/loginpage.component';
 import { DashboardComponent } from './NavSection/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,8 @@ import { DashboardComponent } from './NavSection/dashboard/dashboard.component';
     LoginpageComponent,
     DashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
