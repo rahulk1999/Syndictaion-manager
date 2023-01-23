@@ -6,11 +6,39 @@
   <div class="login-name">Login</div>
 
   <div class="login-form">
-    <form action="">
-      <div><input type="email" placeholder="Email address" /></div>
-      <div><input type="text" placeholder="Password" /></div>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <!-- <label>E-mail address</label> -->
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Email address"
+        />
+        <span *ngIf="email.invalid && email.touched">email is invalid</span>
+      </div>
+      <div class="form-group">
+        <!-- <label>Password</label> -->
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <span *ngIf="password.invalid && password.touched"
+          >password is invalid</span
+        >
+      </div>
       <div class="btn-div">
-        <button class="login-btn" routerLink="/dashboard">Login</button>
+        <button
+          class="login-btn"
+          type="sublmit"
+          [disabled]="loginForm.invalid"
+          routerLink="/dashboard"
+          (click)="onLogin()"
+        >
+          Login
+        </button>
       </div>
     </form>
   </div>

@@ -3,9 +3,9 @@
     <div class="logo">
       <img src="../assets/logo.svg" alt="logo" />
     </div>
-    <div class="logout" routerLink="/login">Logout</div>
+    <div class="logout" routerLink="/login" (click)="onLogout()">Logout</div>
   </div>
-  <div class="nav-sec">
+  <!-- <div class="nav-sec">
     <div>
       <a routerLink="/dashboard/publisher-rule" routerLinkActive="active"
         >Publisher Rule</a
@@ -46,6 +46,16 @@
       >
       <div class="active-class"></div>
     </div>
+  </div> -->
+  <div class="nav-sec">
+    <a
+      *ngFor="let nav of navs"
+      [routerLink]="nav.url"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >{{ nav.content }}</a
+    >
+    <div class="active-class"></div>
   </div>
 </div>
 <router-outlet></router-outlet>
